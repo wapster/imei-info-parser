@@ -9,15 +9,16 @@
 //     });
 // });
 
-
+/*
 chrome.tabs.create({
-    active: true,
-    url: 'http://ppif.ru/imei/index.php'
+    active: false
+    // url: 'http://****.ru/imei/index.php'
 }, function(tab) {
     chrome.tabs.executeScript(tab.id, {
-        code: "localStorage.setItem('9999999999', 'zzzzzzzzzzz')"
-        // code: "$.post('http://ppif.ru/imei/parser.php', {text: 'many_many_xxx'});"
+        // code: "localStorage.setItem('9999999999', 'zzzzzzzzzzz')"
+        // code: "$.post('http://****.ru/imei/parser.php', {text: 'many_many_xxx'});"
     }, function() {
         // chrome.tabs.remove(tab.id);
     });
 });
+*/

@@ -8,31 +8,26 @@
     "permissions": [
       "activeTab", 
       "tabs",
-      // "storage", 
-      "unlimitedStorage",
-      "http://ppif.ru/*"
+      "storage", 
+      "unlimitedStorage"
     ],    
     
     "content_scripts": [{
       "matches": [
-            // "<all_urls>",
-            "https://www.imei.info/*imei=*",
-            "http://ppif.ru/*"
-            // "https://www.imei.info/?imei=354403052584727"
+            "https://www.imei.info/*imei=*"
       ],
       "js": ["libs/jquery350.js", "content.js"]
     }],
 
     "background": {
-        "scripts": ["background.js", "libs/jquery350.js"],
-        "persistent": false
+        "scripts": ["background.js", "libs/jquery350.js"]
      },
         
     "browser_action": {
 		"default_icon": "img/icon.png",
 		"default_popup": "popup.html"
-    }
+    },
         
-    // "content_security_policy": "script-src 'self'; object-src 'self'"
+    "content_security_policy": "script-src 'self'; object-src 'self'"
 
 }
