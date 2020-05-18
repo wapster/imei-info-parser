@@ -10,10 +10,10 @@ let brand = $('.container:first').find('h2:first').text();
 let model = $('.container').find('h1').text();
 model = brand + ' ' + model;
 
-
+// Тип устройства
 let device_type = $('#basic').find('table:first').find('tr:first').find('td:eq(1)').text();
 
-
+// Дата релиза
 let released;
 if ( $("#basic:contains('Released:')" ).length) {
 	released = $('#basic').find('table:first').find('tr:eq(2)').find('td:eq(1)').text();
@@ -21,6 +21,9 @@ if ( $("#basic:contains('Released:')" ).length) {
 	released = 'N/A';
 }
 
+// Кол-во sim-карт
+// у Samsung'ов пишет 1, потому что второй слот это 
+// одновременно либо sim, либо карта памяти
 let sim_count;
 if ( $("#basic:contains('DualSIM:')" ).length) {
 	sim_count = 2;
@@ -38,7 +41,5 @@ let info = {
 	imei: imei
 }
 
+// Сохраняем данные
 localStorage.setItem(tac, JSON.stringify(info));
-
-// localStorage.setItem ("object", JSON.stringify("object"));
-// object = JSON.parse (localStorage.getItem ("object"));
